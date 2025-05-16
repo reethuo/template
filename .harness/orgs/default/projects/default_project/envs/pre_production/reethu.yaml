@@ -1,0 +1,8 @@
+environment:
+  name: reethu
+  identifier: reethu
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: default_project
