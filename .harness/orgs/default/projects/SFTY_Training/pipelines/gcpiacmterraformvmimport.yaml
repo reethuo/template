@@ -50,4 +50,11 @@ pipeline:
                   spec:
                     command: apply
                   timeout: 1h
+              - step:
+                  type: IACMTerraformPlugin
+                  name: Destroy
+                  identifier: Destroy
+                  spec:
+                    command: destroy
+                  timeout: 1h
         tags: {}
