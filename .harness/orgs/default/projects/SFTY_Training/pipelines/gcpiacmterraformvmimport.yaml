@@ -22,6 +22,13 @@ pipeline:
             steps:
               - step:
                   type: IACMTerraformPlugin
+                  name: Init
+                  identifier: Init
+                  spec:
+                    command: init
+                  timeout: 10m
+              - step:
+                  type: IACMTerraformPlugin
                   name: import
                   identifier: import
                   spec:
@@ -29,4 +36,18 @@ pipeline:
                     delegateSelectors:
                       - kubernetes-delegate-reethu
                   timeout: 10m
+              - step:
+                  type: IACMTerraformPlugin
+                  name: Plan
+                  identifier: Plan
+                  spec:
+                    command: plan
+                  timeout: 10m
+              - step:
+                  type: IACMTerraformPlugin
+                  name: APply
+                  identifier: APply
+                  spec:
+                    command: apply
+                  timeout: 1h
         tags: {}
